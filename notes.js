@@ -29,4 +29,14 @@ const noteAboutToday = {
 
 notes.push(noteAboutToday);
 
-console.log(notes);
+// console.log(notes);
+
+//Displaying Your Note Journal Exercise and using string interpolation to display list of learning notes
+
+for (let note of notes) {
+    console.log(`Note ${note.id}
+    ${note.date}
+    I learned ${note.subject}.
+    I spent ${note.timeSpent} working on it.
+    ${note.feeling}`);
+};
