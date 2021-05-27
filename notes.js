@@ -15,4 +15,18 @@ const notes = [
     }
 ];
 
+// console.log(notes);
+
+// Adding A New Note Exercise:
+
+const noteAboutToday = {
+    id: 3,
+    subject: "Data Types (strings, numbers/integers/booleans), Data Structures(Arrays/Objects), and push() method",
+    date: "05/27/21",
+    feeling: "I feel that doing the exercises solidified my basic knowledge of data types, data structures, and push method.",
+    timeSpent: 30
+};
+
+notes.push(noteAboutToday);
+
 console.log(notes);
