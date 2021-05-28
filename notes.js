@@ -33,10 +33,20 @@ notes.push(noteAboutToday);
 
 //Displaying Your Note Journal Exercise and using string interpolation to display list of learning notes
 
-for (let note of notes) {
-    console.log(`Note ${note.id}
-    ${note.date}
-    I learned ${note.subject}.
-    I spent ${note.timeSpent} working on it.
-    ${note.feeling}`);
+// for (let note of notes) {
+//     console.log(`Note ${note.id}
+//     ${note.date}
+//     I learned ${note.subject}.
+//     I spent ${note.timeSpent} working on it.
+//     ${note.feeling}`);
+// };
+
+//Finding a Note Exercise: Using if statement inside for of loop to output the object the has the value for the corresponding property
+
+const searchTerm = "05/27/21";
+
+for (const note of notes) {
+    if (note.date === searchTerm) {
+        console.log(note);
+    };
 };
