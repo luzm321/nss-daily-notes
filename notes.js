@@ -43,10 +43,41 @@ notes.push(noteAboutToday);
 
 //Finding a Note Exercise: Using if statement inside for of loop to output the object the has the value for the corresponding property
 
-const searchTerm = "05/27/21";
+// const searchTerm = "05/27/21";
+
+// for (const note of notes) {
+//     if (note.date === searchTerm) {
+//         console.log(note);
+//     };
+// };
+
+//Adding a note function that automates adding an id for each new note that gets added as a parameter to the function
+
+const createNote = (newNote) => {
+    const lastIndex = notes.length - 1;
+    const currentLastNote = notes[lastIndex];
+    const maxId = currentLastNote.id;
+    const idOfNewNote = maxId + 1;
+    newNote.id = idOfNewNote;
+    notes.push(newNote);
+    newNote.dateCreated = new Date().toLocaleString();  //Date is a class (you use dot and use new keyword, you also use a parenthesis to invoke a class like a function?) that has many functions that includes the toLocalString() function/method to get current date and time
+};
+
+const newestNote = {
+    subject: "Constructing Functions to Automate IDs when adding new objects to an existing array",
+    date: "05/28/21",
+    feeling: "I was fascinated by how you can use dynamic functions to automate adding id's to new objects",
+    timeSpent: 60
+};
+
+createNote(newestNote);
 
 for (const note of notes) {
-    if (note.date === searchTerm) {
-        console.log(note);
-    };
+    console.log(`Note ${note.id}
+        ${note.date}
+        I learned ${note.subject}.
+        I spent ${note.timeSpent} working on it.
+        ${note.feeling}.`);
 };
+
+console.log(notes);
